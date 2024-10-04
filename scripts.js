@@ -10,10 +10,17 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let humanChoice = prompt("Enter your choice")
-    return (humanChoice === "scissors" || humanChoice ==="rock" 
-        ||humanChoice === "paper") ? humanChoice : "No"
+    return prompt("Enter your choice")
 }
 
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    
+  }
+  
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+  
+  playRound(humanSelection, computerSelection);
