@@ -12,6 +12,8 @@ function getComputerChoice(){
     }
 }
 
-function getComputerChoice{
-
+function getHumanChoice(){
+    let humanChoice = prompt("Enter your choice")
+    return (humanChoice === "scissors" || humanChoice ==="rock" 
+        ||humanChoice === "paper") ? humanChoice : "No"
 }
