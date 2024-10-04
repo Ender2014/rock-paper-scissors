@@ -38,11 +38,7 @@ function playRound(humanChoice ="rock", computerChoice="rock") {
     }
 }
 
-  
-  playRound(humanSelection, computerSelection);
-
   // Function that plays 5 rounds of RCS (by calling playround()).
   function playGame(){
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+    
   }
