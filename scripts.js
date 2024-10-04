@@ -34,9 +34,9 @@ function playRound(humanChoice ="rock", computerChoice="rock") {
         computerScore++;
         console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
     } else{
-        console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
-        humanScore++;
         console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
+        humanScore++;
+        console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
     }
 }
 
