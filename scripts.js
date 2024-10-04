@@ -32,21 +32,26 @@ function playRound(humanChoice ="rock", computerChoice="rock") {
     ){
         console.log(`You Lose! ${computerChoice} beats ${humanChoice}!`);
         computerScore++;
+        console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
     } else{
-        console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
+        console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
         humanScore++;
+        console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
     }
 }
 
   // Function that plays 5 rounds of RCS (by calling playround()).
-  function playGame(){
+function playGame(){
     for(let i=0; i<5; i++){
         const humanChoice = getHumanChoice();
         const computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
     }
-    console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
+    // Logs final winner based on score.
     console.log((humanScore > computerScore) ? console.log(`You win!`):console.log(`You Lose!`))
-  }
+}
+
+playGame()
+
 
   
