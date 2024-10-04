@@ -45,4 +45,8 @@ function playRound(humanChoice ="rock", computerChoice="rock") {
         const computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
     }
+    console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
+    console.log((humanScore > computerScore) ? console.log(`You win!`):console.log(`You Lose!`))
   }
+
+  
