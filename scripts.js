@@ -21,7 +21,7 @@ function getHumanChoice(){
 let humanScore = 0;
 let computerScore = 0;
 
-// Function that plays a round of RCS. Logs results in console.
+// Function that plays a round of RCS. Logs results in console and increments score based on winner.
 function playRound(humanChoice ="rock", computerChoice="rock") {
     if(humanChoice.toLowerCase() === computerChoice.toLowerCase()){
         console.log(`Tie! ${computerChoice} is the same as ${humanChoice}!`)
@@ -37,7 +37,12 @@ function playRound(humanChoice ="rock", computerChoice="rock") {
         humanScore++
     }
 }
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
+
   
   playRound(humanSelection, computerSelection);
+
+  // Function that plays 5 rounds of RCS (by calling playround()).
+  function playGame(){
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+  }
