@@ -1,7 +1,4 @@
-
-
 function getComputerChoice(){
-
     rand = Math.random() 
     if(rand < 0.33 ){
         return "scissors"
@@ -17,3 +14,6 @@ function getHumanChoice(){
     return (humanChoice === "scissors" || humanChoice ==="rock" 
         ||humanChoice === "paper") ? humanChoice : "No"
 }
+
+let humanScore = 0;
+let computerScore = 0;
