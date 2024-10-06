@@ -23,21 +23,43 @@ let computerScore = 0;
 
 // Function that plays a round of RCS. Logs results in console and increments score based on winner.
 function playRound(humanChoice, computerChoice) {
-    
+    const resultsMenu = document.querySelector(".results");
+    const finalResult = document.createElement("h2");
+
+    // Logs final winner based on score.
+    if(humanScore >= 5){
+        finalResult.textContent = `Final Winner is the human! ${humanScore} : ${computerScore}`;
+        resultsMenu.appendChild(finalResult);
+        return finalResult;
+        
+    }else if (computerScore >= 5){
+        finalResult.textContent = `Final Winner is the computer! ${humanScore} : ${computerScore}`;
+        resultsMenu.appendChild(finalResult);
+        return finalResult;
+    }
+
     if(humanChoice.toLowerCase() === computerChoice.toLowerCase()){
-        //console.log(`Tie! ${computerChoice} is the same as ${humanChoice}!`);
+        const tieResult = document.createElement("p");
+        tieResult.textContent = `Tie! ${humanChoice} is the same as ${computerChoice}! 
+            ${humanScore} : ${computerScore}`;
+        resultsMenu.appendChild(tieResult);
     }
     else if((humanChoice.toLowerCase() === "rock" && computerChoice.toLowerCase() === "paper")
         || (humanChoice.toLowerCase() === "scissors" && computerChoice.toLowerCase() === "rock")
         || (humanChoice.toLowerCase() === "paper" && computerChoice.toLowerCase() === "scissors")
     ){
-        //console.log(`You Lose! ${computerChoice} beats ${humanChoice}!`);
         computerScore++;
-        //console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
+        const loseResult = document.createElement("p");
+        loseResult.textContent = `You Lose! ${computerChoice} beats ${humanChoice}! 
+            ${humanScore} : ${computerScore}`;
+        resultsMenu.appendChild(loseResult);
+
     } else{
-        //console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
         humanScore++;
-        //console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
+        const winResult = document.createElement("p");
+        winResult.textContent = `You Win! ${humanChoice} beats ${computerChoice}! 
+            ${humanScore} : ${computerScore}`;
+        resultsMenu.appendChild(winResult);
     }
 }
 
@@ -45,36 +67,13 @@ function playRound(humanChoice, computerChoice) {
 function playGame(){
     const menu = document.querySelector(".menu");
     const buttons = document.querySelectorAll("button");
+    let finalResult = 0;
 
     buttons.forEach((button) => {
-        
         button.addEventListener("click", () => {
             playRound(button.textContent, getComputerChoice());
         });
     });
-    
-  
-    /*menu.addEventListener("click", (event) =>{
-        let button = event.target;
-
-        const computerChoice =  getComputerChoice()
-        const humanChoice = button.textContent;
-
-        switch(button.id) {
-            case 'rockBtn':
-                playRound(humanChoice, computerChoice);
-                break;
-            case 'paperBtn':
-                playRound(humanChoice, computerChoice);
-                break;
-            case 'scissorBtn':
-                playRound(humanChoice, computerChoice);
-                break;
-        }
-    });*/
-
-    // Logs final winner based on score.
-    console.log((humanScore > computerScore) ? console.log(`You win!`):console.log(`You Lose!`))
 }
 
 playGame()
