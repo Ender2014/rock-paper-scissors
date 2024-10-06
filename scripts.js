@@ -24,19 +24,19 @@ let computerScore = 0;
 // Function that plays a round of RCS. Logs results in console and increments score based on winner.
 function playRound(humanChoice, computerChoice) {
     if(humanChoice.toLowerCase() === computerChoice.toLowerCase()){
-        console.log(`Tie! ${computerChoice} is the same as ${humanChoice}!`);
+        //console.log(`Tie! ${computerChoice} is the same as ${humanChoice}!`);
     }
     else if((humanChoice.toLowerCase() === "rock" && computerChoice.toLowerCase() === "paper")
         || (humanChoice.toLowerCase() === "scissors" && computerChoice.toLowerCase() === "rock")
         || (humanChoice.toLowerCase() === "paper" && computerChoice.toLowerCase() === "scissors")
     ){
-        console.log(`You Lose! ${computerChoice} beats ${humanChoice}!`);
+        //console.log(`You Lose! ${computerChoice} beats ${humanChoice}!`);
         computerScore++;
-        console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
+        //console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
     } else{
-        console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
+        //console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
         humanScore++;
-        console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
+        //console.log(`Your Score: ${humanScore}, Comp Score: ${computerScore}`)
     }
 }
 
@@ -47,15 +47,18 @@ function playGame(){
     menu.addEventListener("click", (event) =>{
         let button = event.target;
 
+        const computerChoice =  getComputerChoice()
+        const humanChoice = button.textContent;
+
         switch(button.id) {
             case 'rockBtn':
-                console.log('rockBtn item was clicked');
+                playRound(humanChoice, computerChoice);
                 break;
             case 'paperBtn':
-                console.log('paperBtn menu item was clicked');
+                playRound(humanChoice, computerChoice);
                 break;
             case 'scissorBtn':
-                console.log('scissorBtn menu item was clicked');
+                playRound(humanChoice, computerChoice);
                 break;
         }
     });
