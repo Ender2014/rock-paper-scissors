@@ -40,13 +40,9 @@ function playRound(humanChoice ="rock", computerChoice="rock") {
     }
 }
 
-  // Function that plays 5 rounds of RCS (by calling playround()).
+// Function that plays 5 rounds of RCS (by calling playround()).
 function playGame(){
-    for(let i=0; i<5; i++){
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice);
-    }
+    
     // Logs final winner based on score.
     console.log((humanScore > computerScore) ? console.log(`You win!`):console.log(`You Lose!`))
 }
